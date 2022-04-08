@@ -7,14 +7,15 @@ using System.Threading.Tasks;
 namespace SnackDieRoll
 {
     public class Ladder
-    {
-
+    { 
         const int position = 0;
         public int dieRoll()
         {
-            return position;
+            Random random= new Random(); 
+            int die=random.Next(1,7);
+                
+            return die;
         }
-       
-       
+    
     }
 }
