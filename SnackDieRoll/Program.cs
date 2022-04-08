@@ -8,7 +8,10 @@ public class Program
     {
         Ladder Game = new Ladder();
         int value = Game.dieRoll();
-        Console.WriteLine("Die Number is" + " " + value);
+        int value2 = Game.Check();
+        Console.WriteLine("Get Die Number" + " " + value);
+        Console.WriteLine("Take Position" + " " + value2);
     }
+
 
 }
