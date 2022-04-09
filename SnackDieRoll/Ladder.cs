@@ -20,27 +20,35 @@ namespace SnackDieRoll
             return diePosition;
         }
         public void check()
-        {
-            Random random = new Random();
-            int option = random.Next(0, 3);
-            switch (option)
-            {
-                case No_Play:
-                    this.Position += 0;
-                    break;
-                case Snack:
-                    this.Position -= this.dieRoll();
-                    if (this.Position < 0);
-                    else
-                        this.Position = 0;
-                    break;
-                    
-                    case Lader:
-                    this.Position += this.dieRoll();
-                    break;
-                    
-            }
 
+        {
+            while (Position < 100)
+            {
+                Random random = new Random();
+                int option = random.Next(0, 3);
+                switch (option)
+                {
+                    case No_Play:
+                        this.Position += 0;
+                        break;
+                    case Snack:
+                        this.Position -= this.dieRoll();
+                        if (this.Position < 0) ;
+                        else
+                            this.Position = 0;
+                        break;
+
+                    case Lader:
+                        this.Position += this.dieRoll();
+                        if (this.Position < 100) ;
+                        else
+                            this.Position = 100;
+                        break;
+
+                }
+
+            }
         }
     }
+
 }
