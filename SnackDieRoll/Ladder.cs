@@ -19,7 +19,7 @@ namespace SnackDieRoll
 
             return diePosition;
         }
-        public int Check()
+        public void check()
         {
             Random random = new Random();
             int option = random.Next(0, 3);
@@ -34,7 +34,7 @@ namespace SnackDieRoll
                 case Lader:
                     this.Position += this.dieRoll();
                     break;
-                    return option;
+                    
             }
 
         }
