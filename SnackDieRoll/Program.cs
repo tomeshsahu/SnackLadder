@@ -6,12 +6,12 @@ public class Program
 
     public static void Main(String[] args)
     {
-        Ladder Game = new Ladder();
-        int value = Game.dieRoll();
-        
-        Console.WriteLine("Get Die Number" + " " + value);
-        Game.check();
+        Ladder Start = new Ladder();
+        int value = Start.dieRoll();
+
+        Console.WriteLine("Welcome in the Game, You got : " + value + "  " + "Position");
+        Start.check();
+
+
     }
-
-
 }

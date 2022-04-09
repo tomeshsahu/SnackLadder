@@ -30,8 +30,12 @@ namespace SnackDieRoll
                     break;
                 case Snack:
                     this.Position -= this.dieRoll();
+                    if (this.Position < 0);
+                    else
+                        this.Position = 0;
                     break;
-                case Lader:
+                    
+                    case Lader:
                     this.Position += this.dieRoll();
                     break;
                     
