@@ -27,12 +27,15 @@ namespace SnackDieRoll
             {
                 case No_Play:
                     this.Position += 0;
+                    Console.WriteLine("Position is"+this.Position);
                     break;
                 case Snack:
                     this.Position -= this.dieRoll();
+                    Console.WriteLine("Position is"+this.Position);
                     break;
                 case Lader:
                     this.Position += this.dieRoll();
+                    Console.WriteLine("Position is"+this.Position);
                     break;
                     
             }
