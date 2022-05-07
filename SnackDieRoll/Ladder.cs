@@ -8,47 +8,64 @@ namespace SnackDieRoll
 {
     public class Ladder
     {
-        const int No_Play = 0;
-        const int Snack = 1;
-        const int Lader = 2;
-        int Position = 0;
-        public int dieRoll()
-        {
-            Random random = new Random();
-            int diePosition = random.Next(1, 7);
+        const int Snake = 1;
+        const int Laddr = 2;
+        const int No_play = 0;
+        public int Position = 0;
+        public int Count = 0;
+        public int totalPostion = 0;
 
-            return diePosition;
-        }
-        public void check()
-
+        public void Game()
         {
             while (Position < 100)
             {
-                Random random = new Random();
-                int option = random.Next(0, 3);
+                Random rand = new Random();
+                int dice = rand.Next(1, 7);
+                Console.WriteLine("Dice Number= " + dice);
+
+                int option = rand.Next(0, 3);
+                Console.WriteLine("Option= " + option + " " + " 0-NoPlay, 1-Snake, 2-Ladder");
+
                 switch (option)
                 {
-                    case No_Play:
-                        this.Position += 0;
+                    case 0:
+                        Position += 0;
+                        Console.WriteLine("Current Position is " + Position);
                         break;
-                    case Snack:
-                        this.Position -= this.dieRoll();
-                        if (this.Position < 0) ;
-                        else
-                            this.Position = 0;
-                        break;
+                    case 1:
+                        if (Position > dice)
+                        {
+                            Position -= dice;
+                            Console.WriteLine("Current Position is " + Position);
+                        }
+                        else if (Position < dice)
+                        {
+                            Position = 0;
+                            Console.WriteLine("Current Position is " + Position);
+                        }
 
-                    case Lader:
-                        this.Position += this.dieRoll();
-                        if (this.Position < 100) ;
-                        else
-                            this.Position = 100;
                         break;
-
+                    case 2:
+                        Position += dice;
+                        Console.WriteLine("Current Position is " + Position);
+                        break;
                 }
+                Count++;
 
+                if (Position > 100)
+                {
+                    Position -= dice;
+                }
+                else if (Position == 100)
+                {
+                    Console.WriteLine("Win");
+                }
+                else
+                {
+                    Console.WriteLine();
+                }
             }
+            Console.WriteLine("total Number" + Count);
         }
     }
-
 }

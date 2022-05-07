@@ -6,11 +6,10 @@ public class Program
 
     public static void Main(String[] args)
     {
-        Ladder Start = new Ladder();
-        int value = Start.dieRoll();
+        Ladder snakeGame = new Ladder();
+        snakeGame.Game();
 
-        Console.WriteLine("Welcome in the Game, You got : " + value + "  " + "Position");
-        Start.check();
+       
 
 
 
